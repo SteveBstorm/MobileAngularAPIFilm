@@ -1,0 +1,20 @@
+<br />
+<div class="card mb-9">
+    <div class="card-header text-white bg-info">
+       Catégorie : <select (change)="byCategory()" [(ngModel)]="currentCat">
+            <option *ngFor="let item of category" [value]="item.categoryId">{{item.name}}</option>
+        </select>
+        Langue : <select (change)="byLanguage()" [(ngModel)]="currentLang">
+            <option *ngFor="let item of language" [value]="item.languageId">{{item.name}}</option>
+        </select>
+        Recherche : <input type="text" [(ngModel)]="keyword"> 
+        &nbsp; <button class="btn btn-info" (click)="byKeyWord()">Go</button>
+    </div>
+    <div class="card-body">
+        <ul class="list" *ngFor="let item of films">
+            <li class="list-item">
+                <a [routerLink]="['/film/detail/'+item.filmId]">{{item.title}}</a> &nbsp; <button class="btn btn-primary" (click)="addToRent(item.filmId)">Louer</button>
+            </li>
+        </ul>
+    </div>
+</div>

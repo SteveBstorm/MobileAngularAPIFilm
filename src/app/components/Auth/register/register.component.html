@@ -1,0 +1,26 @@
+<div class="card mb-9">
+    <div class="card-header text-white bg-info">S'enregistrer</div>
+    <div class="card-body">
+
+        <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="Adresse E-mail">
+            </div>
+            <div class="form-group">
+                <label>Nom</label>
+                <input type="text" class="form-control" formControlName="lastName" placeholder="Nom de famille">
+            </div>
+            <div class="form-group">
+                <label>Prénom</label>
+                <input type="text" class="form-control" formControlName="firstName" placeholder="Prénom">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <button class="btn btn-info">Valider</button>
+        </form>
+
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+<div *ngIf="!isLogged">
+    <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email">
+        <input class="form-control mr-sm-2" type="password" placeholder="Password" formControlName="password">
+        <button class="btn btn-secondary" type="submit">Login</button>
+        <input type="button" class="btn btn-secondary" routerLink="/register" value="Register">
+    </form>
+</div>
+
+<div *ngIf="isLogged">
+    <button class="btn btn-secondary my-2 my-sm-0" routerLink="/basket">Mon panier</button> &nbsp;
+    <button  class="btn btn-secondary my-2 my-sm-0" (click)="logout()">Log Out</button>
+</div>

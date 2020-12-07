@@ -1,0 +1,28 @@
+<br />
+<div class="card mb-9">
+    <div class="card-header text-white bg-info">
+        Votre liste de locations
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Durée location</th>
+                <th scope="col">Prix location</th>
+                <th scope="col">Cout de remplacement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of basket">
+                <th scope="row">{{item.title}}</th>
+                <td>{{item.rentalDuration}}</td>
+                <td>{{item.rentalPrice}}</td>
+                <td>{{item.replacementCost}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer bg-info">
+        <button class="btn btn-success" (click)="confirm()" [disabled]="basket.length <= 0">Confirmer</button>
+    </div>
